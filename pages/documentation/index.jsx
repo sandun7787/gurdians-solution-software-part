@@ -1,166 +1,152 @@
 import Link from "next/link";
-import Navbar from "../../components/Navbar"; 
+import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import { motion } from "framer-motion";
+import {
+  Book,
+  User,
+  Users,
+  Calendar,
+  FileText,
+  DollarSign,
+  Rocket,
+  ClipboardList,
+  MonitorCheck,
+} from "lucide-react";
 
 const Documentation = () => {
   return (
     <>
-      <Navbar /> {/* ✅ Include Navbar */}
+      <Navbar />
 
       {/* Page Content */}
-      <div className="container mx-auto px-6 py-12 mt-20"> {/* Added mt-20 to avoid overlap with Navbar */}
-        <h1 className="text-5xl font-extrabold text-black mb-6">Chriss HRIS Documentation</h1>
+      <div className="container mx-auto px-6 py-12 mt-20">
+        {/* Premium Header with Icon */}
+        <motion.h1
+          className="text-6xl font-extrabold text-black mb-8 flex items-center gap-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Book size={50} className="text-gray-800" />
+          Cirrus HRIS Documentation
+        </motion.h1>
 
-        {/* Overview Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Overview</h2>
-          <p className="text-gray-600">
-            Chriss HRIS is an advanced Human Resource Information System designed to automate employee management, streamline payroll, track attendance, and optimize HR functions for businesses of all sizes.
+        {/* Rich Introduction Section */}
+        <motion.section
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">Introduction</h2>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Welcome to the **Cirrus HRIS** Documentation. Cirrus HRIS (Human Resource Information System) is a
+            powerful, all-in-one platform designed to streamline **HR processes**, optimize **employee management**,
+            and enhance **organizational productivity**. Whether you're managing **payroll, tracking attendance**, or
+            organizing **company events**, Cirrus HRIS provides the tools and insights needed to make **data-driven 
+            decisions** and ensure smooth **business operations**.
           </p>
-        </section>
+          <p className="text-lg text-gray-700 mt-4">
+            This documentation serves as a comprehensive guide, offering **step-by-step instructions**,
+            **best practices**, and **troubleshooting tips** to help you maximize the potential of Cirrus HRIS.
+            Explore our detailed modules, learn how to configure settings, and find out how to integrate third-party
+            tools seamlessly. Let's get started on this journey to transform your **HR management experience**.
+          </p>
+        </motion.section>
 
-        {/* Installation Guide */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Installation Guide</h2>
-          <h3 className="text-xl font-semibold text-gray-700 mt-4">System Requirements</h3>
-          <ul className="list-disc ml-6 text-gray-600">
-            <li>Operating System: Windows 10/11, macOS, Linux</li>
-            <li>Node.js v16+ and npm</li>
-            <li>Database: MySQL / PostgreSQL</li>
-            <li>Python 3.x for backend automation (if applicable)</li>
-          </ul>
+        {/* Table of Contents with Premium Look */}
+        <motion.section
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <h2 className="text-4xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+            <ClipboardList size={40} /> Table of Contents
+          </h2>
 
-          <h3 className="text-xl font-semibold text-gray-700 mt-4">Installation Steps</h3>
-          <pre className="bg-gray-100 p-4 rounded-md mt-2 text-gray-700">
-            {`# Clone the repository
-git clone https://github.com/chriss-hris.git
-
-# Navigate to the project folder
-cd chriss-hris
-
-# Install dependencies
-npm install
-
-# Configure environment variables
-cp .env.example .env
-
-# Set up the database
-# Ensure that MySQL/PostgreSQL is installed and configured correctly
-
-# Start the application
-npm run dev
-            `}
-          </pre>
-        </section>
-
-        {/* API Documentation */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">API Documentation</h2>
-          <h3 className="text-xl font-semibold text-gray-700 mt-4">Get Employee List</h3>
-          <pre className="bg-gray-100 p-4 rounded-md mt-2 text-gray-700">
-            {`GET /api/employees
-Headers:
-  Authorization: Bearer <token>
-
-Response:
-{
-  "status": "success",
-  "data": [
-    {
-      "id": 1,
-      "name": "John Doe",
-      "position": "HR Manager",
-      "department": "Human Resources",
-      "salary": "$5000"
-    }
-  ]
-}`}
-          </pre>
-
-          <h3 className="text-xl font-semibold text-gray-700 mt-4">Create New Employee</h3>
-          <pre className="bg-gray-100 p-4 rounded-md mt-2 text-gray-700">
-            {`POST /api/employees
-Headers:
-  Authorization: Bearer <token>
-Body:
-{
-  "name": "Jane Smith",
-  "position": "Software Developer",
-  "department": "Engineering",
-  "salary": "$4000"
-}
-
-Response:
-{
-  "status": "success",
-  "message": "Employee created successfully"
-}`}
-          </pre>
-        </section>
-
-        {/* Attendance Tracking API */}
-        <section className="mb-12">
-          <h3 className="text-xl font-semibold text-gray-700 mt-4">Track Employee Attendance</h3>
-          <pre className="bg-gray-100 p-4 rounded-md mt-2 text-gray-700">
-            {`POST /api/attendance
-Headers:
-  Authorization: Bearer <token>
-Body:
-{
-  "employee_id": 1,
-  "date": "2024-05-01",
-  "status": "Present"
-}
-
-Response:
-{
-  "status": "success",
-  "message": "Attendance recorded successfully"
-}`}
-          </pre>
-        </section>
-
-        {/* Payroll API */}
-        <section className="mb-12">
-          <h3 className="text-xl font-semibold text-gray-700 mt-4">Generate Payroll Report</h3>
-          <pre className="bg-gray-100 p-4 rounded-md mt-2 text-gray-700">
-            {`POST /api/payroll/generate
-Headers:
-  Authorization: Bearer <token>
-Body:
-{
-  "employee_id": 1,
-  "month": "2024-05",
-  "gross_salary": "$5000",
-  "deductions": "$500",
-  "net_salary": "$4500"
-}
-
-Response:
-{
-  "status": "success",
-  "message": "Payroll report generated successfully"
-}`}
-          </pre>
-        </section>
-
-        {/* FAQs Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">FAQs</h2>
-          <div className="bg-gray-100 p-4 rounded-md">
-            <h3 className="text-lg font-semibold text-gray-700">How do I reset my password?</h3>
-            <p className="text-gray-600">
-              Go to <Link href="/forgot-password" className="text-blue-600 hover:underline">Forgot Password</Link> and enter your email to receive reset instructions.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Login & Dashboard",
+                icon: <User size={30} />,
+                path: "/documentation/login-and-dashboard",
+                description:
+                  "Learn how to access the Cirrus HRIS dashboard, manage login credentials, and navigate the main interface.",
+              },
+              {
+                title: "User Profile Module",
+                icon: <Users size={30} />,
+                path: "/documentation/profile-module",
+                description:
+                  "Manage detailed user profiles, including personal, professional, and contact information effectively.",
+              },
+              {
+                title: "User Master Module",
+                icon: <FileText size={30} />,
+                path: "/documentation/user-master",
+                description:
+                  "Understand how to configure and manage master data including departments, roles, and employee categories.",
+              },
+              {
+                title: "Employer Module",
+                icon: <MonitorCheck size={30} />,
+                path: "/documentation/employer-module",
+                description:
+                  "Keep track of employer information, maintain company records, and streamline employer-related processes.",
+              },
+              {
+                title: "Event Calendar Module",
+                icon: <Calendar size={30} />,
+                path: "/documentation/event-calendar",
+                description:
+                  "Efficiently manage company events, employee schedules, and important HR milestones using the event calendar.",
+              },
+              {
+                title: "Add/Deduct Module",
+                icon: <DollarSign size={30} />,
+                path: "/documentation/add-deduct",
+                description:
+                  "Handle financial adjustments like bonuses, deductions, and reimbursements with ease using the Add/Deduct module.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-6 bg-gray-50 shadow-lg rounded-lg transition-all duration-300 hover:shadow-2xl"
+              >
+                <Link href={item.path} className="group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-gray-200 rounded-full">{item.icon}</div>
+                    <h3 className="text-2xl font-semibold text-gray-800 group-hover:text-blue-600 transition">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600">{item.description}</p>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-          <div className="bg-gray-100 p-4 rounded-md mt-4">
-            <h3 className="text-lg font-semibold text-gray-700">Can I integrate third-party tools?</h3>
-            <p className="text-gray-600">Yes! Chriss HRIS supports integrations with Slack, Google Calendar, and more.</p>
-          </div>
-        </section>
+        </motion.section>
+
+        {/* Call to Action */}
+        <div className="flex justify-center mt-12">
+          <Link href="/getting-started">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-3 bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300 hover:bg-blue-700"
+            >
+              <Rocket size={24} />
+              Get Started with Cirrus HRIS
+            </motion.button>
+          </Link>
+        </div>
       </div>
 
-      <Footer /> {/* ✅ Include Footer */}
+      <Footer />
     </>
   );
 };
