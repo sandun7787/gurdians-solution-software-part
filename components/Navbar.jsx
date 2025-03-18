@@ -44,7 +44,7 @@ const Navbar = () => {
         </ul>
 
         {/* Get Started Button */}
-        <Link href="/get-started">
+        <Link href="/contact">
           <button className="hidden md:block bg-black text-white font-bold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-110 hover:bg-gray-800 animate-pulse">
             Get Started
           </button>

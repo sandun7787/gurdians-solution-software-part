@@ -2,7 +2,7 @@ const LoggingInDocumentation = () => {
   return (
     <>
       <div className="flex flex-col min-h-screen container mx-auto px-6 py-12">
-        <h1 className="text-5xl font-bold text-gray-900 mb-8 text-center">
+        <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
           <i className="fas fa-sign-in-alt mr-2"></i>USER GUIDE FOR LOGIN & DASHBOARD
         </h1>
         

@@ -46,7 +46,7 @@ const HomePage = () => {
             transition={{ duration: 0.8, delay: 1 }}
             className="flex space-x-6 justify-center"
           >
-            <Link href="/get-started">
+            <Link href="/contact">
               <button className="bg-black text-white px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105 hover:bg-gray-800">
                 Get Started
               </button>
@@ -137,7 +137,7 @@ const HomePage = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="flex space-x-6 justify-center"
         >
-          <Link href="/get-started">
+          <Link href="/contact">
             <button className="bg-white text-black font-bold px-8 py-4 rounded-lg shadow-md transition transform hover:scale-110 hover:bg-gray-300">
               Get Started Now
             </button>

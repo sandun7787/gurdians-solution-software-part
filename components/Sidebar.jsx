@@ -12,6 +12,7 @@ const Sidebar = ({ topics, onSelectTopic }) => {
               className="font-medium text-gray-300 hover:text-gray-100 w-full text-left py-2 px-3 rounded-lg transition duration-300 hover:bg-gray-800"
               onClick={() => onSelectTopic(topic.path)}
             >
+              <span className="mr-3">{topic.icon}</span>
               {topic.title}
             </button>
           </li>

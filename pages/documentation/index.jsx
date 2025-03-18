@@ -9,21 +9,40 @@ const Documentation = () => {
   const [selectedTopic, setSelectedTopic] = useState("/documentation/introduction");
   const topics = [
     {
-      title: "1. Logging In and Dashboard ",
+      title: "Logging In and Dashboard",
       path: "/documentation/logging-in",
+      icon: "🔑"
     },
     {
-      title: "2. User Guide for Master Details Module",
+      title: "User Guide for Master Details Module",
       path: "/documentation/master-details",
+      icon: "📋"
     },
     {
-      title: "3. Managing Employees",
+      title: "Managing Employees",
       path: "/documentation/managing-employees",
+      icon: "👥"
     },
     {
-      title: "4. Recruiting Module - User Guide",
+      title: "Recruiting Module - User Guide",
       path: "/documentation/recruiting-module",
+      icon: "🧑‍💼"
     },
+    {
+      title: "Add/Deduct Module - User Guide",
+      path: "/documentation/deduct-module",
+      icon: "➕➖"
+    },
+    {
+      title: "Event Calendar Module - User Guide",
+      path: "/documentation/EventCalendarModule",
+      icon: "📅"
+    },
+    {
+      title: "User Profile Module - User Guide",
+      path: "/documentation/ProfileModule",
+      icon: "👤"
+    }
   ];
 
   const handleTopicSelection = (path) => {
@@ -43,7 +62,6 @@ const Documentation = () => {
           ></iframe>
         </section>
       </div>
-    
     </>
   );
 };

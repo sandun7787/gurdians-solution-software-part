@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";  // "X" icon import
 import Image from "next/image";
 
 const Footer = () => {
@@ -43,8 +44,8 @@ const Footer = () => {
             >
               <h3 className="text-xl font-semibold">Quick Links</h3>
               <Link href="/" className="text-gray-600 hover:text-black transition">Home</Link>
-              <Link href="/about" className="text-gray-600 hover:text-black transition">About</Link>
-              <Link href="/services" className="text-gray-600 hover:text-black transition">Services</Link>
+              <Link href="https://guardians.lk/#about" className="text-gray-600 hover:text-black transition">About</Link>
+              <Link href="https://guardians.lk/#services" className="text-gray-600 hover:text-black transition">Services</Link>
               <Link href="/contact" className="text-gray-600 hover:text-black transition">Contact</Link>
             </motion.div>
 
@@ -57,16 +58,17 @@ const Footer = () => {
             >
               <h3 className="text-xl font-semibold">Follow Us</h3>
               <div className="flex space-x-4 mt-3">
-                <a href="#" className="p-3 bg-gray-200 rounded-full hover:bg-blue-600 transition">
+                <a href="https://web.facebook.com/Guardianslk/about/?_rdc=1&_rdr#" className="p-3 bg-gray-200 rounded-full hover:bg-blue-600 transition">
                   <FaFacebookF className="text-black hover:text-white w-5 h-5" />
                 </a>
-                <a href="#" className="p-3 bg-gray-200 rounded-full hover:bg-blue-400 transition">
-                  <FaTwitter className="text-black hover:text-white w-5 h-5" />
+                {/* Replacing Twitter with "X" icon */}
+                <a href="https://x.com/guard_solutions" className="p-3 bg-gray-200 rounded-full hover:bg-gray-800 transition">
+                  <FaXmark className="text-black hover:text-white w-5 h-5" />
                 </a>
-                <a href="#" className="p-3 bg-gray-200 rounded-full hover:bg-blue-700 transition">
+                <a href="https://www.linkedin.com/company/guardians-solutions/posts/?feedView=all" className="p-3 bg-gray-200 rounded-full hover:bg-blue-700 transition">
                   <FaLinkedinIn className="text-black hover:text-white w-5 h-5" />
                 </a>
-                <a href="#" className="p-3 bg-gray-200 rounded-full hover:bg-pink-500 transition">
+                <a href="https://www.instagram.com/guardian_warrior_solutions/" className="p-3 bg-gray-200 rounded-full hover:bg-pink-500 transition">
                   <FaInstagram className="text-black hover:text-white w-5 h-5" />
                 </a>
               </div>

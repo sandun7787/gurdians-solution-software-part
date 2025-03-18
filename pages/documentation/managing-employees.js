@@ -4,9 +4,12 @@ const EmployeeManagementPage = () => {
   return (
     <div className="container mx-auto px-4">
       {/* Section 3: Managing Employees */}
+      <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+    <i className="fas fa-cogs mr-2"></i>User Guide for Managing Employees Module
+  </h1>
       <section className="mb-10">
         <h2 className="text-3xl font-semibold text-gray-800">
-          <i className="fas fa-users mr-2"></i>Managing Employees
+          <i className="fas fa-users mr-2"></i>Managing Employees overview
         </h2>
         <p className="text-lg text-gray-700 leading-relaxed text-justify">
           The Employees Management Module allows HR teams to manage employee profiles, track their status, and update key details. The following features are available:
